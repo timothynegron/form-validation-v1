@@ -14,6 +14,10 @@ button {
     color: #1687a7;
 }
 
+button:focus {
+    outline: none;
+}
+
 input {
     width: 90%;
     height: 4vh;
@@ -27,6 +31,7 @@ form {
 
 #app {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;

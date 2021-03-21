@@ -22,12 +22,16 @@ function setEventListeners(){
 }
 
 function checkCredentials (){
-    if(getUsernameAttempt() === username && getPasswordAttempt() === password){
-        console.log("login successful");
-    }else{
-        console.log("login failed");
-    }
 
+    if(getUsernameAttempt() === username && getPasswordAttempt() === password){
+        console.log("Function: CheckCredentials => login successful");
+        window.location.href = "https://timothynegron.github.io/My-Projects/";
+    }
+    
+    else{
+        console.log("Function: CheckCredentials => login failed");
+        messageCredentialsInvalid();
+    }
 }
 
 function getUsernameAttempt(){
@@ -36,4 +40,11 @@ function getUsernameAttempt(){
 
 function getPasswordAttempt(){
     return document.querySelectorAll("input")[1].value;
+}
+
+function messageCredentialsInvalid(){
+    const invalidText = document.querySelector("p");
+    invalidText.innerHTML = "<strong>INVALID CREDENTIALS</strong>"
+    invalidText.style.fontSize = "12pt";
+    invalidText.style.color = "red";
 }
